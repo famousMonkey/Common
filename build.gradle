@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group 'com.meatball.common'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+//指定编译的编码
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/milestone"}
+}
+
+dependencies {
+    implementation('org.apache.tomcat.embed:tomcat-embed-core:9.0.12')
+    implementation('org.springframework:spring-beans:5.1.2.RELEASE')
+    implementation('io.springfox:springfox-swagger2:2.7.0')
+    implementation('javax.persistence:javax.persistence-api:2.2')
+    implementation('org.hibernate:hibernate-core:5.3.7.Final')
+    implementation('com.alibaba:fastjson:1.2.39')
+    implementation('org.springframework.data:spring-data-commons:2.1.2.RELEASE')
+    implementation('org.springframework.data:spring-data-jpa:2.1.2.RELEASE')
+    implementation('org.springframework:spring-web:5.1.2.RELEASE')
+    implementation('org.springframework.boot:spring-boot-autoconfigure:2.1.0.RELEASE')
+    implementation('commons-beanutils:commons-beanutils:1.9.3')
+    implementation('commons-lang:commons-lang:2.6')
+    implementation('commons-codec:commons-codec:1.11')
+    implementation('org.apache.shiro:shiro-core:1.4.0')
+    implementation('org.apache.poi:poi-ooxml:3.9')
+    compileOnly('org.projectlombok:lombok:1.18.2')
+    annotationProcessor('org.projectlombok:lombok:1.18.2')
+    implementation('io.jsonwebtoken:jjwt:0.9.0')
+    //提取表情
+    implementation('com.vdurmont:emoji-java:4.0.0')
+    implementation 'org.springframework.boot:spring-boot-starter-amqp:2.1.6.RELEASE'
+
+    implementation('org.springframework.boot:spring-boot-starter-data-redis:2.1.3.RELEASE')
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.1.2.RELEASE'
+
+}
+
+
+
